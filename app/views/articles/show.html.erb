@@ -7,23 +7,19 @@
 </head>
 <body>
 
-
-
-<div id="main">
-    <img src="main-img.jpg">
+<div id="title">
+    <div>
+        <p><%= @article.created_at %></p>
+        <h1><%= @article.title %></h1>
+    </div>
 </div>
-
 
 <div id="article_wrap">
 
-    <div id="article_list">
-        
-        <% @articles.each do |article| %>
-          <h2><%= link_to article.title, "/articles/#{article.id}" %></h2>
-          <%= article.created_at %><br />
-        <% end %>
-
+    <div id="content">
+        <%= @article.content %>
     </div>
+
 
     <div id="sidebar">
         

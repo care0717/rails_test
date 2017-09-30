@@ -1,8 +1,15 @@
 Rails.application.routes.draw do
+
   devise_for :users
   get 'pages/index'
 
+  devise_scope :user do
+    get '/users/sign_out' => 'devise/sessions#destroy'
+  end
   
+  get '/articles/:id', to: 'articles#show'
+  get '/articles/new', to: 'articles#new'
+  post '/articles/new',  to: 'articles#create'
   root to: 'pages#index'
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
