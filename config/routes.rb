@@ -6,9 +6,9 @@ Rails.application.routes.draw do
   devise_scope :user do
     get '/users/sign_out' => 'devise/sessions#destroy'
   end
-  
-  get '/articles/:id', to: 'articles#show'
   get '/articles/new', to: 'articles#new'
+  get '/articles/:id', to: 'articles#show'
+  
   post '/articles/new',  to: 'articles#create'
   
   get '/articles/:id/edit', to: 'articles#edit'
