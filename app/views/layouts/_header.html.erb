@@ -1,0 +1,16 @@
+<header>
+    <p id="logo"><a href="">RailsCamp<span>Blog</span></a></p>
+    <nav>
+        <ul>
+            <li><a href="/">トップ</a></li>
+            <% if signed_in? %> 
+                <li><a href="">新規投稿</a></li>
+            <% else %>
+                <li><a href="/users/sign_up">ユーザー登録</a></li>
+                <li><a href="/users/sign_in">サインイン</a></li>
+            <% end %>
+            <div class="clear"></div>
+        </ul>
+    </nav>
+    <div class="clear"></div>
+</header>
