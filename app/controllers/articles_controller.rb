@@ -50,6 +50,6 @@ class ArticlesController < ApplicationController
     end
     
     def signed_in!
-      redirect_to new_user_session_path
+      redirect_to new_user_session_path if !signed_in?
     end
 end
