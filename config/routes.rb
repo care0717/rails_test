@@ -10,6 +10,11 @@ Rails.application.routes.draw do
   get '/articles/:id', to: 'articles#show'
   get '/articles/new', to: 'articles#new'
   post '/articles/new',  to: 'articles#create'
+  
+  get '/articles/:id/edit', to: 'articles#edit'
+  patch '/articles/:id/edit', to: 'articles#update'
+  
+  delete '/articles/:id', to: 'articles#delete'
   root to: 'pages#index'
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".

@@ -20,6 +20,10 @@
         
         <% @articles.each do |article| %>
           <h2><%= link_to article.title, "/articles/#{article.id}" %></h2>
+          <% if signed_in? %> 
+              <%= link_to "編集", "/articles/#{article.id}/edit" %>
+              <%= link_to "削除", "/articles/#{article.id}", method: :delete %>
+          <% end %>
           <%= article.created_at %><br />
         <% end %>
 
