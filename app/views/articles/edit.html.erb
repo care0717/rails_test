@@ -4,11 +4,11 @@
   <div >
     <%= form_for(@article, url: "/articles/#{@article.id}/edit") do |f| %>
       
-      <%= f.label :title %>
-      <%= f.text_field :title, class: 'form-control'  %>
+      <%= f.label :title %><br>
+      <%= f.text_field :title, class: 'form-control'  %><br>
       
-      <%= f.label :content %>
-      <%= f.text_field :content, class: 'form-control'  %>
+      <%= f.label :content %><br>
+      <%= f.text_area :content, class: 'form-control'  %><br>
 
       <%= f.submit "Update article", class: "btn btn-primary" %>
     <% end %>

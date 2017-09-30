@@ -1,5 +1,5 @@
 class ArticlesController < ApplicationController
-  #before_action :signed_in!, only: [:edit, :update, :destroy]
+  before_action :signed_in!, only: [:edit, :update, :destroy]
   
   def show
     @article = Article.find(params[:id])
@@ -47,5 +47,9 @@ class ArticlesController < ApplicationController
     params.require(:article).permit(
       :title, :content
     )
+    end
+    
+    def signed_in!
+      redirect_to new_user_session_path
     end
 end
